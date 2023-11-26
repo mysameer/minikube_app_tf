@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gs-app-svc
+  labels:
+    name:  gs_app_svc
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    nodePort: 30025
+    targetPort: 3000
+    protocol: TCP
+  selector:
+    name: gs_app

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gs-app-deployment
+spec:
+  selector:
+    matchLabels:
+      name: gs_app
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        name: gs_app
+    spec:
+      containers:
+      - name: getting-started
+        image: sameerahmedbalaganur/gsapp
+        ports:
+        - containerPort: 3000
